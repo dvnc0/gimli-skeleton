@@ -1,0 +1,47 @@
+version: "3"
+
+services:
+  db:
+    image: "mariadb:latest"
+    volumes:
+      - ./db:/var/lib/mysql
+    environment:
+      - MYSQL_ALLOW_EMPTY_PASSWORD=true
+      - MYSQL_USER=dev_root
+      - MYSQL_DATABASE=gimli_skeleton
+      - MYSQL_PASSWORD=dev_root
+    ports:
+      - 34003:3306
+  adminer:
+    image: "adminer"
+    ports:
+      - 34002:8080
+    links:
+      - db
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - ./src:/var/www/html
+    links:
+      - db
+    ports:
+      - 34001:80
+  cache:
+    image: "redis:latest"
+    ports:
+      - 34004:6379
+    command: redis-server --save 20 1 --loglevel warning
+    volumes: 
+      - ./cache:/var/www/html/
+  redis-gui:
+    image: "rediscommander/redis-commander:latest"
+    ports:
+      - 34005:8081
+    environment:
+      - REDIS_HOSTS=cache
+volumes:
+  db:
+  src:
+  cache:

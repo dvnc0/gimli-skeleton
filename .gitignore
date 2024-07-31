@@ -1,0 +1,10 @@
+src/public/js/.vite
+src/public/js/assets
+src/public/js/manifest.json
+tmp/
+*.ini
+*.log
+.vscode/
+.idea/
+db/
+cache/
