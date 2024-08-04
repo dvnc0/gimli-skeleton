@@ -5,7 +5,7 @@ use Gimli\Router\Route;
 
 Route::group('/api', function () {
 		Route::get('/test', function () {
-			return 'Hello World!';
+			echo 'Hello World!';
 		});
 	}
 );

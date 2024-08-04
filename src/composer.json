@@ -13,7 +13,7 @@
         }
     },
     "require": {
-        "php": ">=8.3",
+        "php": ">=8.2",
         "latte/latte": "^3.0",
 		"danc0/gimliduck-php": ">=0.12.0"
 
