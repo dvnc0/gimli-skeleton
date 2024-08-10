@@ -1,4 +1,6 @@
 import { createApp } from 'vue'
+import WaveUI from 'wave-ui'
+import 'wave-ui/dist/wave-ui.css'
 
 const modules = import.meta.glob('./components/*.vue', { eager: true })
 const components = {}
@@ -11,5 +13,6 @@ for (const el of document.getElementsByClassName('vue-app')) {
     template: el.innerHTML,
     components
   });
+  app.use(WaveUI, {});
   app.mount(el);
 }

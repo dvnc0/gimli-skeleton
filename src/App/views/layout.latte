@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<title>{block title}{/block}</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="">
+    <meta property="og:description" content="">
+    <meta property="og:image" content="">
+    <meta property="og:url" content="">
+    <meta property="og:type" content="website">
+    
+    <!-- Twitter Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="">
+    <meta name="twitter:description" content="">
+    <meta name="twitter:image" content="">
+
+
+	<link href = "https://fonts.googleapis.com/icon?family=Material+Icons" rel = "stylesheet">
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+
+	<link rel="preconnect" href="https://rsms.me/">
+	<link rel="stylesheet" href="https://rsms.me/inter/inter.css">
+	
+	{* Uncomment if using Vue *}
+	{* {getCss('src/main.js')} *}
+	<link rel="stylesheet" href="/public/css/layout.css"> {* Tailwind CSS output*}
+	<link rel="stylesheet" href="/public/css/styles.css"> {* Your CSS overrides or custom non Tailwind CSS *}
+</head>
+	<body class="w-full vue-app">
+		{block content}{/block}
+		{* Uncomment if using Vue *}
+		{* {getVue('src/main.js')} *}
+	</body>
+</html>
