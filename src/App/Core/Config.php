@@ -32,6 +32,7 @@ class Config extends Config_Base
 	 *             host: string,
 	 *             port: int
 	 *         }
+	 * 		   events: array,
 	 * } $config
 	 */
 	protected array $config = [
@@ -58,5 +59,6 @@ class Config extends Config_Base
 			'port' => 6379
 		],
 		'use_web_route_file' => FALSE,
+		'events' => [],
 	];
 }
